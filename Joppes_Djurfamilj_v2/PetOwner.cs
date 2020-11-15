@@ -120,7 +120,7 @@ namespace Joppes_Djurfamilj_v2
             Console.WriteLine("List of anminals");
             ConsoleHelper.LineOutPut();
             var counter = 0;
-            //Write all animals
+       
             foreach (var pet in petList)
             {
                 counter++;

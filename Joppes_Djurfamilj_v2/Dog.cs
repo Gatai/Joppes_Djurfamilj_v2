@@ -31,15 +31,13 @@ namespace Joppes_Djurfamilj_v2
                 return InteractResult.ToyBroken;
             }
 
-            //Calculate energy
+            //Calculate energy left
             energy = energy - 1;
 
-            //If angergy is 0 then the pet is true
             if (energy == 0)
             {
                 hungry = true;
             }
-
             
             toy.LowerQuality(damage);
 
