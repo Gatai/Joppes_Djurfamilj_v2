@@ -17,7 +17,7 @@ namespace Joppes_Djurfamilj_v2
 
         public new string ToString()
         {
-            return string.Format("Name: {0}, Month: {1}, Favorite Food: {2}, Breed: {3}, Hungry: {4}", name, month, favoriteFood, breed, hungry);
+            return string.Format("{0}, Month: {1}, Favorite Food: {2}, Breed: {3}, Hungry: {4}", name, month, favoriteFood, breed, hungry);
         }
     }
 }

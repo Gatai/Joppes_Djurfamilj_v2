@@ -7,8 +7,6 @@ namespace Joppes_Djurfamilj_v2
 {
     public static class ConsoleHelper
     {
-        //Kan lägga till färger på konsolen, en metod för de 
-
         public static void Reloading()
         {
             Console.CursorVisible = false;
@@ -43,5 +41,12 @@ namespace Joppes_Djurfamilj_v2
             Console.WriteLine(new string('-', 80));
         }
 
+        public static void ColorText(ConsoleColor color, string text)
+        {
+            ConsoleColor currentColor = Console.ForegroundColor;
+            Console.ForegroundColor = color;
+            Console.WriteLine(text);
+            Console.ForegroundColor = currentColor;
+        }
     }
 }

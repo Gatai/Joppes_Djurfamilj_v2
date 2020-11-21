@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Joppes_Djurfamilj_v2
 {
@@ -14,7 +12,8 @@ namespace Joppes_Djurfamilj_v2
         protected int energy = 6;
         protected int damage;
 
-        //Different behaviors
+        public string Name => name;
+
         public enum InteractResult
         {
             Played = 0,
@@ -23,7 +22,6 @@ namespace Joppes_Djurfamilj_v2
             ToyBroken = 3,
         }
 
-        //Different behaviors
         public enum EatResult
         {
             NotHungry = 0,
@@ -33,15 +31,12 @@ namespace Joppes_Djurfamilj_v2
 
         public abstract InteractResult Interact(Toy toy);
 
-        public EatResult Eat(string food)
+        public virtual EatResult Eat(string food)
         {
-            //If the animal does not get his favorite food
             if (favoriteFood != food)
             {
-                //Print this
                 return EatResult.DontLikeTheFood;
             }
-            //If the animal is not hungry, it does not want to eat
             if (hungry == false)
             {
                 return EatResult.NotHungry;
@@ -49,7 +44,6 @@ namespace Joppes_Djurfamilj_v2
 
             hungry = false;
 
-            //Reset energy
             energy = 2;
             
             return EatResult.Eat;
@@ -57,7 +51,7 @@ namespace Joppes_Djurfamilj_v2
 
         public virtual void HungryAnimal()
         {
-            Console.WriteLine($"gny, {name} dont want to play i want to eat my favorite food!");
+            Console.WriteLine($"gny, {name} want to eat my favorite food!");
         }
 
         public string FetchInformationToString()
@@ -71,7 +65,7 @@ namespace Joppes_Djurfamilj_v2
 
         public override string ToString()
         {
-            return string.Format("{0}, Age: {1}, Favorite Food: {2}, Breed: {3}, Hungry: {4} (animal klass)", name, age, favoriteFood, breed, hungry);
+            return string.Format("{0}, Age: {1}, Favorite Food: {2}, Breed: {3}, Hungry: {4}", name, age, favoriteFood, breed, hungry);
         }
 
 
